@@ -1,17 +1,17 @@
 $(function () {
   // amenities filter
-  let selectedAmenities = {}
+  let amenities = {}
   $('.filters .amenities input[type="checkbox"]').on('change', function () {
     // update selected amenities dictionnary
     amenityId = $(this).attr('data-id')
     amenityName = $(this).attr('data-name')
     if ($(this).is(':checked'))
-      selectedAmenities[amenityId] = amenityName;
+      amenities[amenityId] = amenityName;
     else
-      delete selectedAmenities[amenityId]
+      delete amenities[amenityId]
 
     // display selected amenities
-    content = Object.values(selectedAmenities).join(', ')
+    content = Object.values(amenities).join(', ')
     $('.amenities h4').html(content);
   });
 
